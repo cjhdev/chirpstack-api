@@ -95,28 +95,6 @@ function deserialize_api_CreateLoRaCloudIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateLoRaCloudIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_api_CreateMQTTIntegrationCertificateRequest(arg) {
-  if (!(arg instanceof as_external_api_application_pb.CreateMQTTIntegrationCertificateRequest)) {
-    throw new Error('Expected argument of type api.CreateMQTTIntegrationCertificateRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_api_CreateMQTTIntegrationCertificateRequest(buffer_arg) {
-  return as_external_api_application_pb.CreateMQTTIntegrationCertificateRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_api_CreateMQTTIntegrationCertificateResponse(arg) {
-  if (!(arg instanceof as_external_api_application_pb.CreateMQTTIntegrationCertificateResponse)) {
-    throw new Error('Expected argument of type api.CreateMQTTIntegrationCertificateResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_api_CreateMQTTIntegrationCertificateResponse(buffer_arg) {
-  return as_external_api_application_pb.CreateMQTTIntegrationCertificateResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_api_CreateMyDevicesIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.CreateMyDevicesIntegrationRequest)) {
     throw new Error('Expected argument of type api.CreateMyDevicesIntegrationRequest');
@@ -258,6 +236,28 @@ function serialize_api_DeleteThingsBoardIntegrationRequest(arg) {
 
 function deserialize_api_DeleteThingsBoardIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteThingsBoardIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GenerateMQTTIntegrationCertificateRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GenerateMQTTIntegrationCertificateRequest)) {
+    throw new Error('Expected argument of type api.GenerateMQTTIntegrationCertificateRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GenerateMQTTIntegrationCertificateRequest(buffer_arg) {
+  return as_external_api_application_pb.GenerateMQTTIntegrationCertificateRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GenerateMQTTIntegrationCertificateResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GenerateMQTTIntegrationCertificateResponse)) {
+    throw new Error('Expected argument of type api.GenerateMQTTIntegrationCertificateResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GenerateMQTTIntegrationCertificateResponse(buffer_arg) {
+  return as_external_api_application_pb.GenerateMQTTIntegrationCertificateResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_GetAWSSNSIntegrationRequest(arg) {
@@ -1152,18 +1152,18 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseSerialize: serialize_api_ListIntegrationResponse,
     responseDeserialize: deserialize_api_ListIntegrationResponse,
   },
-  // CreateMQTTIntegrationCertificate creates an application ID specific TLS certificate
+  // GenerateMQTTIntegrationCertificate generates an application ID specific TLS certificate
   // to connect to the MQTT broker.
-  createMQTTIntegrationCertificate: {
-    path: '/api.ApplicationService/CreateMQTTIntegrationCertificate',
+  generateMQTTIntegrationCertificate: {
+    path: '/api.ApplicationService/GenerateMQTTIntegrationCertificate',
     requestStream: false,
     responseStream: false,
-    requestType: as_external_api_application_pb.CreateMQTTIntegrationCertificateRequest,
-    responseType: as_external_api_application_pb.CreateMQTTIntegrationCertificateResponse,
-    requestSerialize: serialize_api_CreateMQTTIntegrationCertificateRequest,
-    requestDeserialize: deserialize_api_CreateMQTTIntegrationCertificateRequest,
-    responseSerialize: serialize_api_CreateMQTTIntegrationCertificateResponse,
-    responseDeserialize: deserialize_api_CreateMQTTIntegrationCertificateResponse,
+    requestType: as_external_api_application_pb.GenerateMQTTIntegrationCertificateRequest,
+    responseType: as_external_api_application_pb.GenerateMQTTIntegrationCertificateResponse,
+    requestSerialize: serialize_api_GenerateMQTTIntegrationCertificateRequest,
+    requestDeserialize: deserialize_api_GenerateMQTTIntegrationCertificateRequest,
+    responseSerialize: serialize_api_GenerateMQTTIntegrationCertificateResponse,
+    responseDeserialize: deserialize_api_GenerateMQTTIntegrationCertificateResponse,
   },
 };
 

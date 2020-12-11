@@ -1704,27 +1704,27 @@ export namespace DeletePilotThingsIntegrationRequest {
   }
 }
 
-export class CreateMQTTIntegrationCertificateRequest extends jspb.Message {
+export class GenerateMQTTIntegrationCertificateRequest extends jspb.Message {
   getApplicationId(): number;
   setApplicationId(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateMQTTIntegrationCertificateRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateMQTTIntegrationCertificateRequest): CreateMQTTIntegrationCertificateRequest.AsObject;
+  toObject(includeInstance?: boolean): GenerateMQTTIntegrationCertificateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateMQTTIntegrationCertificateRequest): GenerateMQTTIntegrationCertificateRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateMQTTIntegrationCertificateRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateMQTTIntegrationCertificateRequest;
-  static deserializeBinaryFromReader(message: CreateMQTTIntegrationCertificateRequest, reader: jspb.BinaryReader): CreateMQTTIntegrationCertificateRequest;
+  static serializeBinaryToWriter(message: GenerateMQTTIntegrationCertificateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateMQTTIntegrationCertificateRequest;
+  static deserializeBinaryFromReader(message: GenerateMQTTIntegrationCertificateRequest, reader: jspb.BinaryReader): GenerateMQTTIntegrationCertificateRequest;
 }
 
-export namespace CreateMQTTIntegrationCertificateRequest {
+export namespace GenerateMQTTIntegrationCertificateRequest {
   export type AsObject = {
     applicationId: number,
   }
 }
 
-export class CreateMQTTIntegrationCertificateResponse extends jspb.Message {
+export class GenerateMQTTIntegrationCertificateResponse extends jspb.Message {
   getTlsCert(): Uint8Array | string;
   getTlsCert_asU8(): Uint8Array;
   getTlsCert_asB64(): string;
@@ -1746,16 +1746,16 @@ export class CreateMQTTIntegrationCertificateResponse extends jspb.Message {
   setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateMQTTIntegrationCertificateResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateMQTTIntegrationCertificateResponse): CreateMQTTIntegrationCertificateResponse.AsObject;
+  toObject(includeInstance?: boolean): GenerateMQTTIntegrationCertificateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateMQTTIntegrationCertificateResponse): GenerateMQTTIntegrationCertificateResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateMQTTIntegrationCertificateResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateMQTTIntegrationCertificateResponse;
-  static deserializeBinaryFromReader(message: CreateMQTTIntegrationCertificateResponse, reader: jspb.BinaryReader): CreateMQTTIntegrationCertificateResponse;
+  static serializeBinaryToWriter(message: GenerateMQTTIntegrationCertificateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateMQTTIntegrationCertificateResponse;
+  static deserializeBinaryFromReader(message: GenerateMQTTIntegrationCertificateResponse, reader: jspb.BinaryReader): GenerateMQTTIntegrationCertificateResponse;
 }
 
-export namespace CreateMQTTIntegrationCertificateResponse {
+export namespace GenerateMQTTIntegrationCertificateResponse {
   export type AsObject = {
     tlsCert: Uint8Array | string,
     tlsKey: Uint8Array | string,

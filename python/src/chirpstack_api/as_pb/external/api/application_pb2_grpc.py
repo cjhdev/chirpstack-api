@@ -226,10 +226,10 @@ class ApplicationServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.SerializeToString,
                 response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationResponse.FromString,
                 )
-        self.CreateMQTTIntegrationCertificate = channel.unary_unary(
-                '/api.ApplicationService/CreateMQTTIntegrationCertificate',
-                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMQTTIntegrationCertificateRequest.SerializeToString,
-                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMQTTIntegrationCertificateResponse.FromString,
+        self.GenerateMQTTIntegrationCertificate = channel.unary_unary(
+                '/api.ApplicationService/GenerateMQTTIntegrationCertificate',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationCertificateRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationCertificateResponse.FromString,
                 )
 
 
@@ -531,8 +531,8 @@ class ApplicationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateMQTTIntegrationCertificate(self, request, context):
-        """CreateMQTTIntegrationCertificate creates an application ID specific TLS certificate
+    def GenerateMQTTIntegrationCertificate(self, request, context):
+        """GenerateMQTTIntegrationCertificate generates an application ID specific TLS certificate
         to connect to the MQTT broker.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -752,10 +752,10 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.FromString,
                     response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationResponse.SerializeToString,
             ),
-            'CreateMQTTIntegrationCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateMQTTIntegrationCertificate,
-                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMQTTIntegrationCertificateRequest.FromString,
-                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMQTTIntegrationCertificateResponse.SerializeToString,
+            'GenerateMQTTIntegrationCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateMQTTIntegrationCertificate,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationCertificateRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationCertificateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1483,7 +1483,7 @@ class ApplicationService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateMQTTIntegrationCertificate(request,
+    def GenerateMQTTIntegrationCertificate(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1493,8 +1493,8 @@ class ApplicationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/CreateMQTTIntegrationCertificate',
-            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMQTTIntegrationCertificateRequest.SerializeToString,
-            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMQTTIntegrationCertificateResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/GenerateMQTTIntegrationCertificate',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationCertificateRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

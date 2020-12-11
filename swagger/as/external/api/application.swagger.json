@@ -466,13 +466,13 @@
     },
     "/api/applications/{application_id}/integrations/mqtt/certificate": {
       "post": {
-        "summary": "CreateMQTTIntegrationCertificate creates an application ID specific TLS certificate\nto connect to the MQTT broker.",
-        "operationId": "CreateMQTTIntegrationCertificate",
+        "summary": "GenerateMQTTIntegrationCertificate generates an application ID specific TLS certificate\nto connect to the MQTT broker.",
+        "operationId": "GenerateMQTTIntegrationCertificate",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiCreateMQTTIntegrationCertificateResponse"
+              "$ref": "#/definitions/apiGenerateMQTTIntegrationCertificateResponse"
             }
           }
         },
@@ -1508,31 +1508,6 @@
         }
       }
     },
-    "apiCreateMQTTIntegrationCertificateResponse": {
-      "type": "object",
-      "properties": {
-        "tlsCert": {
-          "type": "string",
-          "format": "byte",
-          "description": "TLS certificate."
-        },
-        "tlsKey": {
-          "type": "string",
-          "format": "byte",
-          "description": "TLS key."
-        },
-        "caCert": {
-          "type": "string",
-          "format": "byte",
-          "description": "CA certificate."
-        },
-        "expiresAt": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Expires at defines the expiration date of the certificate."
-        }
-      }
-    },
     "apiCreateMyDevicesIntegrationRequest": {
       "type": "object",
       "properties": {
@@ -1583,6 +1558,31 @@
         "topicName": {
           "type": "string",
           "description": "Topic name.\nThis is the name of the Pub/Sub topic."
+        }
+      }
+    },
+    "apiGenerateMQTTIntegrationCertificateResponse": {
+      "type": "object",
+      "properties": {
+        "tlsCert": {
+          "type": "string",
+          "format": "byte",
+          "description": "TLS certificate."
+        },
+        "tlsKey": {
+          "type": "string",
+          "format": "byte",
+          "description": "TLS key."
+        },
+        "caCert": {
+          "type": "string",
+          "format": "byte",
+          "description": "CA certificate."
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expires at defines the expiration date of the certificate."
         }
       }
     },
