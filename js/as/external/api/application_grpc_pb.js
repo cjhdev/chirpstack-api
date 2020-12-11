@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('grpc');
 var as_external_api_application_pb = require('../../../as/external/api/application_pb.js');
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
@@ -92,6 +93,28 @@ function serialize_api_CreateLoRaCloudIntegrationRequest(arg) {
 
 function deserialize_api_CreateLoRaCloudIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateLoRaCloudIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_CreateMQTTIntegrationCertificateRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateMQTTIntegrationCertificateRequest)) {
+    throw new Error('Expected argument of type api.CreateMQTTIntegrationCertificateRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateMQTTIntegrationCertificateRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateMQTTIntegrationCertificateRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_CreateMQTTIntegrationCertificateResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateMQTTIntegrationCertificateResponse)) {
+    throw new Error('Expected argument of type api.CreateMQTTIntegrationCertificateResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateMQTTIntegrationCertificateResponse(buffer_arg) {
+  return as_external_api_application_pb.CreateMQTTIntegrationCertificateResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_CreateMyDevicesIntegrationRequest(arg) {
@@ -1128,6 +1151,19 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     requestDeserialize: deserialize_api_ListIntegrationRequest,
     responseSerialize: serialize_api_ListIntegrationResponse,
     responseDeserialize: deserialize_api_ListIntegrationResponse,
+  },
+  // CreateMQTTIntegrationCertificate creates an application ID specific TLS certificate
+  // to connect to the MQTT broker.
+  createMQTTIntegrationCertificate: {
+    path: '/api.ApplicationService/CreateMQTTIntegrationCertificate',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateMQTTIntegrationCertificateRequest,
+    responseType: as_external_api_application_pb.CreateMQTTIntegrationCertificateResponse,
+    requestSerialize: serialize_api_CreateMQTTIntegrationCertificateRequest,
+    requestDeserialize: deserialize_api_CreateMQTTIntegrationCertificateRequest,
+    responseSerialize: serialize_api_CreateMQTTIntegrationCertificateResponse,
+    responseDeserialize: deserialize_api_CreateMQTTIntegrationCertificateResponse,
   },
 };
 
