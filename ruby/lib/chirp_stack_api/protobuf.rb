@@ -1,10 +1,8 @@
 module ChirpStackAPI
 
-  $LOAD_PATH.unshift File.expand_path("#{__FILE__}/protobuf")
+  $LOAD_PATH.unshift File.expand_path("#{File.dirname(__FILE__)}/protobuf")
 
-  Dir["protobuf/**/*_pb.rb"].each do |f|
-    require f
-  end
+  Dir["#{File.dirname(__FILE__)}/protobuf/**/*_pb.rb"].each { |f| require f }
 
   $LOAD_PATH.shift
 

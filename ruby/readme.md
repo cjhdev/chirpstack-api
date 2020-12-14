@@ -1,7 +1,7 @@
-ChirpStack GRPC Interfaces for Ruby
-===================================
+ChirpStack gRPC Interface for Ruby
+==================================
 
-GRPC code generated from [chirpstack-api](https://github.com/brocaar/chirpstack-api)
+gRPC code generated from [chirpstack-api](https://github.com/brocaar/chirpstack-api)
 protobuf definitions.
 
 ## Installation
@@ -18,8 +18,6 @@ Then `bundle install`.
 
 ## Usage
 
-Require as per usual:
-
 ~~~ ruby
 require 'chirp_stack_api'
 ~~~
@@ -27,7 +25,7 @@ require 'chirp_stack_api'
 All the generated classes and modules are namespaced within `ChirpStackAPI`.
 The nested module names lineup with the protobuf definitions.
 
-Refer to GRPC documentation on how to make use of the interfaces.
+Refer to gRPC documentation on how to make use of the interfaces.
 
 ## License
 
