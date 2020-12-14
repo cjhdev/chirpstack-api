@@ -4,6 +4,7 @@ package gw;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/gw";
 option java_package = "io.chirpstack.api.gw";
+option ruby_package = "ChirpStackAPI::GW";
 
 import "common/common.proto";
 import "google/protobuf/timestamp.proto";
@@ -80,8 +81,8 @@ enum TxAckStatus {
 }
 
 message UplinkTXInfo {
-	// Frequency (Hz).
-	uint32 frequency = 1;
+    // Frequency (Hz).
+    uint32 frequency = 1;
 
     // Modulation.
     common.Modulation modulation = 2;
@@ -368,7 +369,7 @@ message DownlinkTXAck {
 
 message DownlinkTXAckItem {
     // The Ack status of this item.
-    TxAckStatus status = 1; 
+    TxAckStatus status = 1;
 }
 
 message GatewayConfiguration {

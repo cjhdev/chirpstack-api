@@ -4,6 +4,7 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
+option ruby_package = "ChirpStackAPI::AS::External::API";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -14,42 +15,42 @@ import "common/common.proto";
 
 // GatewayProfileService is the service managing the gateway-profiles.
 service GatewayProfileService {
-	// Create creates the given gateway-profile.
-	rpc Create(CreateGatewayProfileRequest) returns (CreateGatewayProfileResponse) {
-		option (google.api.http) = {
-			post: "/api/gateway-profiles"
-			body: "*"
-		};
-	}
+    // Create creates the given gateway-profile.
+    rpc Create(CreateGatewayProfileRequest) returns (CreateGatewayProfileResponse) {
+        option (google.api.http) = {
+            post: "/api/gateway-profiles"
+            body: "*"
+        };
+    }
 
-	// Get returns the gateway-profile matching the given id.
-	rpc Get(GetGatewayProfileRequest) returns (GetGatewayProfileResponse) {
-		option (google.api.http) = {
-			get: "/api/gateway-profiles/{id}"
-		};
-	}
+    // Get returns the gateway-profile matching the given id.
+    rpc Get(GetGatewayProfileRequest) returns (GetGatewayProfileResponse) {
+        option (google.api.http) = {
+            get: "/api/gateway-profiles/{id}"
+        };
+    }
 
-	// Update updates the given gateway-profile.
-	rpc Update(UpdateGatewayProfileRequest) returns (google.protobuf.Empty) {
-		option (google.api.http) = {
-			put: "/api/gateway-profiles/{gateway_profile.id}"
-			body: "*"
-		};
-	}
+    // Update updates the given gateway-profile.
+    rpc Update(UpdateGatewayProfileRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            put: "/api/gateway-profiles/{gateway_profile.id}"
+            body: "*"
+        };
+    }
 
-	// Delete deletes the gateway-profile matching the given id.
-	rpc Delete(DeleteGatewayProfileRequest) returns (google.protobuf.Empty) {
-		option (google.api.http) = {
-			delete: "/api/gateway-profiles/{id}"
-		};
-	}
+    // Delete deletes the gateway-profile matching the given id.
+    rpc Delete(DeleteGatewayProfileRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/api/gateway-profiles/{id}"
+        };
+    }
 
-	// List returns the existing gateway-profiles.
-	rpc List(ListGatewayProfilesRequest) returns (ListGatewayProfilesResponse) {
-		option (google.api.http) = {
-			get: "/api/gateway-profiles"
-		};
-	}
+    // List returns the existing gateway-profiles.
+    rpc List(ListGatewayProfilesRequest) returns (ListGatewayProfilesResponse) {
+        option (google.api.http) = {
+            get: "/api/gateway-profiles"
+        };
+    }
 }
 
 message GatewayProfile {
