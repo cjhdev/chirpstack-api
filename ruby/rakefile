@@ -1,7 +1,8 @@
 require 'rake/testtask'
+require 'grpc'
 
 task :update do
-  `grpc_tools_ruby_protoc -I../protobuf --ruby_out=lib/chirp_stack_api/protobuf --grpc_out=lib/chirp_stack_api/protobuf ../protobuf/**/*.proto`
+  `grpc_tools_ruby_protoc -I/googleapis -I../protobuf --ruby_out=lib/chirp_stack_api/protobuf --grpc_out=lib/chirp_stack_api/protobuf #{Dir["../protobuf/**/*.proto"].join(" ")}`
 end
 
 Rake::TestTask.new do |t|
