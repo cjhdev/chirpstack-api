@@ -51,11 +51,7 @@ currently the build run only on Linux x86_64 due to the download of the protoc-g
 
 ### Ruby
 
-See: ruby/readme.md
-
-```ruby
-gem "chirp_stack_api", git: "https://github.com/brocaar/chirpstack-api", glob: 'ruby/*.gemspec'
-```
+See: [ruby/readme.md](ruby/readme.md)
 
 ## Generating client libraries
 
