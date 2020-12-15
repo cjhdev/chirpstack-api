@@ -8,17 +8,17 @@ protobuf definitions.
 
 Add the following to your Gemfile:
 
-~~~ ruby
+```ruby
 gem "chirp_stack_api", git: "https://github.com/brocaar/chirpstack-api", glob: 'ruby/*.gemspec'
-~~~
+```
 
 Then `bundle install`.
 
 ## Usage
 
-~~~ ruby
+```ruby
 require 'chirp_stack_api'
-~~~
+```
 
 All the generated classes and modules are namespaced within `ChirpStackAPI`.
 The nested module names line up with the protobuf definitions.
