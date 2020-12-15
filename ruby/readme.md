@@ -6,8 +6,6 @@ protobuf definitions.
 
 ## Installation
 
-Install directly from the chirpstack-api repository using Bundle.
-
 Add the following to your Gemfile:
 
 ~~~ ruby
@@ -23,7 +21,7 @@ require 'chirp_stack_api'
 ~~~
 
 All the generated classes and modules are namespaced within `ChirpStackAPI`.
-The nested module names lineup with the protobuf definitions.
+The nested module names line up with the protobuf definitions.
 
 Refer to gRPC documentation on how to make use of the interfaces.
 
