@@ -20,11 +20,8 @@ Then `bundle install`.
 require 'chirp_stack_api'
 ```
 
-All the generated classes and modules are namespaced within `ChirpStackAPI`.
+All generated classes and modules are namespaced within `ChirpStackAPI`.
 The nested module names line up with the protobuf definitions.
 
 Refer to gRPC documentation on how to make use of the interfaces.
 
-## License
-
-As per ChirpStack project.
