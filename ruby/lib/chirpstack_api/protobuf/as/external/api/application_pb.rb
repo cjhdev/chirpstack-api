@@ -3,6 +3,7 @@
 
 require 'google/protobuf'
 
+require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
 require 'google/protobuf/empty_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
@@ -279,6 +280,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "api.DeletePilotThingsIntegrationRequest" do
       optional :application_id, :int64, 1
     end
+    add_message "api.GenerateMQTTIntegrationClientCertificateRequest" do
+      optional :application_id, :int64, 1
+    end
+    add_message "api.GenerateMQTTIntegrationClientCertificateResponse" do
+      optional :tls_cert, :string, 1
+      optional :tls_key, :string, 2
+      optional :ca_cert, :string, 3
+      optional :expires_at, :message, 4, "google.protobuf.Timestamp"
+    end
     add_enum "api.IntegrationKind" do
       value :HTTP, 0
       value :INFLUXDB, 1
@@ -378,6 +388,8 @@ module ChirpStackAPI
         GetPilotThingsIntegrationResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.GetPilotThingsIntegrationResponse").msgclass
         UpdatePilotThingsIntegrationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UpdatePilotThingsIntegrationRequest").msgclass
         DeletePilotThingsIntegrationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.DeletePilotThingsIntegrationRequest").msgclass
+        GenerateMQTTIntegrationClientCertificateRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.GenerateMQTTIntegrationClientCertificateRequest").msgclass
+        GenerateMQTTIntegrationClientCertificateResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.GenerateMQTTIntegrationClientCertificateResponse").msgclass
         IntegrationKind = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IntegrationKind").enummodule
         Marshaler = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Marshaler").enummodule
         InfluxDBPrecision = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("api.InfluxDBPrecision").enummodule
