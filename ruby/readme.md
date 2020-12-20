@@ -14,7 +14,7 @@ gem "chirpstack_api", git: "https://github.com/brocaar/chirpstack-api", glob: 'r
 
 Then `bundle install`.
 
-## Example Usage
+## Example
 
 Create a network server device profile object:
 
@@ -32,6 +32,4 @@ ChirpStackAPI::NS::DeviceProfile.new(
   rf_region: "EU868"
 )
 ```
-
-Refer to gRPC documentation for more information.
 
