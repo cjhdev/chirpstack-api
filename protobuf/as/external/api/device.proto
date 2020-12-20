@@ -4,7 +4,6 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
-option ruby_package = "ChirpStackAPI::AS::External::API";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -112,8 +111,8 @@ service DeviceService {
     }
 
     // StreamFrameLogs streams the uplink and downlink frame-logs for the given DevEUI.
-    //   * These are the raw LoRaWAN frames and this endpoint is intended for debugging only.
-    //   * This endpoint does not work from a web-browser.
+	//   * These are the raw LoRaWAN frames and this endpoint is intended for debugging only.
+	//   * This endpoint does not work from a web-browser.
     rpc StreamFrameLogs(StreamDeviceFrameLogsRequest) returns (stream StreamDeviceFrameLogsResponse) {
         option (google.api.http) = {
             get: "/api/devices/{dev_eui}/frames"
@@ -121,8 +120,8 @@ service DeviceService {
     }
 
     // StreamEventLogs stream the device events (uplink payloads, ACKs, joins, errors).
-    //   * This endpoint is intended for debugging only.
-    //   * This endpoint does not work from a web-browser.
+	//   * This endpoint is intended for debugging only.
+	//   * This endpoint does not work from a web-browser.
     rpc StreamEventLogs(StreamDeviceEventLogsRequest) returns (stream StreamDeviceEventLogsResponse) {
         option (google.api.http) = {
             get: "/api/devices/{dev_eui}/events"
@@ -132,8 +131,8 @@ service DeviceService {
 
 message Device {
     // Device EUI (HEX encoded).
-    string dev_eui = 1 [json_name = "devEUI"];
-
+    string dev_eui = 1 [json_name = "devEUI"]; 
+    
     // Name of the device (if left blank, it will be set to the DevEUI).
     string name = 2;
 
@@ -175,8 +174,8 @@ message Device {
 
 message DeviceListItem {
     // Device EUI (HEX encoded).
-    string dev_eui = 1 [json_name = "devEUI"];
-
+    string dev_eui = 1 [json_name = "devEUI"]; 
+    
     // Name of the device.
     string name = 2;
 

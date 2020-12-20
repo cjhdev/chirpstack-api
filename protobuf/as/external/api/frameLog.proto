@@ -4,7 +4,6 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
-option ruby_package = "ChirpStackAPI::AS::External::API";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
@@ -13,8 +12,8 @@ import "gw/gw.proto";
 
 
 enum RXWindow {
-    RX1 = 0;
-    RX2 = 1;
+	RX1 = 0;
+	RX2 = 1;
 }
 
 message UplinkFrameLog {

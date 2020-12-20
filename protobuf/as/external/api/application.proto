@@ -4,7 +4,6 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
-option ruby_package = "ChirpStackAPI::AS::External::API";
 
 import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
@@ -326,6 +325,14 @@ service ApplicationService {
 			get: "/api/applications/{application_id}/integrations"
 		};
 	}
+
+    // GenerateMQTTIntegrationClientCertificate generates an application ID specific TLS certificate
+    // to connect to the MQTT broker.
+    rpc GenerateMQTTIntegrationClientCertificate(GenerateMQTTIntegrationClientCertificateRequest) returns (GenerateMQTTIntegrationClientCertificateResponse) {
+        option(google.api.http) = {
+            post: "/api/applications/{application_id}/integrations/mqtt/certificate"
+        };
+    }
 }
 
 enum IntegrationKind {
@@ -338,6 +345,7 @@ enum IntegrationKind {
     AWS_SNS = 6;
     AZURE_SERVICE_BUS = 7;
     PILOT_THINGS = 8;
+    MQTT_GLOBAL = 9;
 }
 
 enum Marshaler {

@@ -4,7 +4,6 @@ package fuota;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/fuota";
 option java_package = "io.chirpstack.api.fuota";
-option ruby_package = "ChirpStackAPI::Common";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
@@ -64,20 +63,20 @@ message Deployment {
     uint32 multicast_group_id = 7;
 
     // Multicast timeout.
-    // This defines the timeout of the multicast-session.
-    // Please refer to the Remote Multicast Setup specification as this field
-    // has a different meaning for Class-B and Class-C groups.
+	// This defines the timeout of the multicast-session.
+	// Please refer to the Remote Multicast Setup specification as this field
+	// has a different meaning for Class-B and Class-C groups.
     uint32 multicast_timeout = 8;
 
     // Unicast timeout.
-    // Set this to the value in which you at least expect an uplink frame from
-    // the device. The FUOTA server will wait for the given time before
-    // attempting a retry or continuing with the next step.
+	// Set this to the value in which you at least expect an uplink frame from
+	// the device. The FUOTA server will wait for the given time before
+	// attempting a retry or continuing with the next step.
     google.protobuf.Duration unicast_timeout = 9;
 
     // Unicast attempt count.
-    // The number of attempts before considering an unicast command
-    // to be failed.
+	// The number of attempts before considering an unicast command
+	// to be failed.
     uint32 unicast_attempt_count = 10;
 
     // FragmentationFragmentSize.
