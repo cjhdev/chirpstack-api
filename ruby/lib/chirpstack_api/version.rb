@@ -1,5 +1,5 @@
 module ChirpStackAPI
 
-  VERSION="0.1.0"
+  VERSION="3.9.1"
 
 end
