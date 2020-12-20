@@ -9,19 +9,29 @@ protobuf definitions.
 Add the following to your Gemfile:
 
 ```ruby
-gem "chirp_stack_api", git: "https://github.com/brocaar/chirpstack-api", glob: 'ruby/*.gemspec'
+gem "chirpstack_api", git: "https://github.com/brocaar/chirpstack-api", glob: 'ruby/*.gemspec'
 ```
 
 Then `bundle install`.
 
-## Usage
+## Example Usage
+
+Create a network server device profile object:
 
 ```ruby
-require 'chirp_stack_api'
+require 'chirpstack_api'
+
+ChirpStackAPI::NS::DeviceProfile.new(
+  id: "default",
+  mac_version: "1.0.2",
+  reg_params_revision: "B",
+  supports_32bit_f_cnt: true,
+  max_eirp: 14,
+  max_duty_cycle: 100,
+  supports_join: true,
+  rf_region: "EU868"
+)
 ```
 
-All generated classes and modules are namespaced within `ChirpStackAPI`.
-The nested module names line up with the protobuf definitions.
-
-Refer to gRPC documentation on how to make use of the interfaces.
+Refer to gRPC documentation for more information.
 

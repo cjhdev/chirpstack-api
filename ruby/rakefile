@@ -1,6 +1,6 @@
 require 'grpc'
 
 task :update do
-  `grpc_tools_ruby_protoc -I/googleapis -I../protobuf --ruby_out=lib/chirp_stack_api/protobuf --grpc_out=lib/chirp_stack_api/protobuf #{Dir["../protobuf/**/*.proto"].join(" ")}`
+  `grpc_tools_ruby_protoc -I/googleapis -I../protobuf --ruby_out=lib/chirpstack_api/protobuf --grpc_out=lib/chirpstack_api/protobuf #{Dir["../protobuf/**/*.proto"].join(" ")}`
 end
 
