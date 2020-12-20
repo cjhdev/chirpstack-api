@@ -79,7 +79,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module ChirpStackAPI
-  module Common
+  module FUOTA
     DeploymentDevice = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("fuota.DeploymentDevice").msgclass
     Deployment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("fuota.Deployment").msgclass
     CreateDeploymentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("fuota.CreateDeploymentRequest").msgclass

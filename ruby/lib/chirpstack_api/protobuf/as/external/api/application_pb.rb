@@ -299,6 +299,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :AWS_SNS, 6
       value :AZURE_SERVICE_BUS, 7
       value :PILOT_THINGS, 8
+      value :MQTT_GLOBAL, 9
     end
     add_enum "api.Marshaler" do
       value :JSON, 0

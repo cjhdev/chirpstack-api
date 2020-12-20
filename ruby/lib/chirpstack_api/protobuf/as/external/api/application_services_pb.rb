@@ -102,6 +102,9 @@ module ChirpStackAPI
             rpc :DeletePilotThingsIntegration, ::ChirpStackAPI::AS::External::API::DeletePilotThingsIntegrationRequest, ::Google::Protobuf::Empty
             # ListIntegrations lists all configured integrations.
             rpc :ListIntegrations, ::ChirpStackAPI::AS::External::API::ListIntegrationRequest, ::ChirpStackAPI::AS::External::API::ListIntegrationResponse
+            # GenerateMQTTIntegrationClientCertificate generates an application ID specific TLS certificate
+            # to connect to the MQTT broker.
+            rpc :GenerateMQTTIntegrationClientCertificate, ::ChirpStackAPI::AS::External::API::GenerateMQTTIntegrationClientCertificateRequest, ::ChirpStackAPI::AS::External::API::GenerateMQTTIntegrationClientCertificateResponse
           end
 
           Stub = Service.rpc_stub_class
